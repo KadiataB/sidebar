@@ -1,0 +1,10 @@
+{
+    "cours": [
+          { "id": 1, "module": "UML", "nh": "40","professeur": "Wane" },
+          { "id": 2, "module": "UI/UX", "nh": "40","professeur": "Diouf" },
+          { "id": 3, "module": "JAVA", "nh": "40","professeur": "Niasse" },
+          { "id": 4, "module": "PYTHON", "nh": "40","professeur": "Mbaye" },
+          { "id": 5, "module": "SYMFONY", "nh": "40","professeur": "Wane" }
+        ]
+    
+}

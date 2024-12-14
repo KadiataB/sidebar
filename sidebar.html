@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Cours</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body class="bg-gray-100 flex flex-col">
+    <header class="bg-blue-900 text-white">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="flex items-center space-x-4">
+                <img src="logo.png" alt="Logo" class="w-10 h-10">
+                <h2 class="text-lg font-semibold">Ecole 221</h2>
+            </div>
+            <img src="image1.png" alt="Avatar" class="w-10 h-10 rounded-full">
+        </div>
+    </header>
+    <div class="flex">
+        <button class="bg-blue-700 text-white h-10 w-19 rounded mt-3 ml-3 p-2"  id="toggleButton" style="display: none;">Show Sidebar</button>
+        <div class="w-64 bg-blue-900 text-white mt-0.5 h-screen flex flex-col justify-between" id="sidebar">
+            <div class="p-4">
+                <div class="flex items-center justify-between">
+                    <h1 class="text-xl font-bold mb-4">Gestion des cours</h1>
+                    <button class="bg-blue-700 px-2 py-1 rounded mb-3" id="button">x</button>
+                </div>
+                <nav>
+                    <a href="home.html"
+                        class="block py-2 px-4 rounded bg-white text-black hover:bg-white hover:text-black transition duration-300">
+                        <i class="fas fa-book mr-2"></i> Liste des cours
+                    </a>
+                    <a href="absence.html"
+                        class="block py-2 px-4 rounded border border-white bg-transparent text-white mt-3">
+                        <i class="fas fa-clipboard-list mr-2"></i> Liste des absences
+                    </a>
+                </nav>
+            </div>
+            <div class="p-4">
+                <button
+                    class="bg-red-600 w-full text-white font-medium px-4 py-2 rounded hover:bg-red-700 flex items-center justify-center space-x-2">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Déconnexion</span>
+                </button>
+            </div>
+        </div>
+        
+        
+        <div class="flex-1 p-6">
+            <h1 class="text-blue-400">Cours / Listes des cours</h1>
+            <h1 class="text-xl font-bold mb-6">Gestion des cours</h1>
+            <div class="flex items-center space-x-2 w-full max-w-md">
+                <input type="text" placeholder="Filtrer sur semestre enours"
+                    class="w-full px-4 py-2 mb-7 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
+                <button
+                    class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-7">
+                    OK
+                </button>
+            </div>
+            <div class="bg-white shadow rounded-lg overflow-hidden">
+                <table class="min-w-full bg-white">
+                    <thead class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                        <tr>
+                            <th class="py-3 px-6 text-left">ID</th>
+                            <th class="py-3 px-6 text-left">Module</th>
+                            <th class="py-3 px-6 text-left">Nombre d'heure</th>
+                            <th class="py-3 px-6 text-left">Professeur</th>
+                            <th class="py-3 px-6 text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-600 text-sm font-light" id="table-body">
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+<div class="flex" id="modal" style="display: none;">
+    <div class="flex-1 p-6">
+        <h1 class="text-blue-400">Séances / Liste des Séances</h1>
+        <h1 class="text-xl font-bold mb-6">Gestion des Séances </h1>
+        <div class="flex justify-end items-center space-x-4 mb-4" id="modalContent">
+            <select
+                class="bg-blue-600 text-white font-medium px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-600">
+                <option value="">Choisir un semestre</option>
+                <option value="1">Semestre 1</option>
+                <option value="2">Semestre 2</option>
+                <option value="3">Semestre 3</option>
+                <option value="4">Semestre 4</option>
+            </select>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div
+                class="bg-gradient-to-br from-blue-500 to-blue-700 shadow-lg rounded-lg overflow-hidden text-white">
+                <div class="p-6">
+                    <h2 class="text-xl font-bold">Programmation</h2>
+                    <p class="text-white/90 mt-2">ID: 1</p>
+                    <p class="text-white/90 mt-2">Date de la séance: 01/12/2024</p>
+                    <p class="text-white/90 mt-2">Heure de Debut:10h:00</p>
+                    <p class="text-white/90 mt-2">Heure de Fin:12h:00</p>
+                    <p class="text-white/90 mt-2">Professeur:Wane</p>
+                    <div class="mt-4 text-center">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <div class="p-6">
+                    <h2 class="text-lg font-bold">Programmation</h2>
+                    <p class="text-gray-600 mt-2">ID: 2</p>
+                    <p class="text-gray-600 mt-2">Date de la séance: 02/12/2024</p>
+                    <p class="text-gray-600 mt-2">Heure de Debut:10h:00</p>
+                    <p class="text-gray-600 mt-2">Heure de Fin:12h:00</p>
+                    <p class="text-gray-600 mt-2">Professeur:Wane</p>
+                </div>
+            </div>
+
+            <div
+                class="bg-gradient-to-br from-blue-500 to-blue-700 shadow-lg rounded-lg overflow-hidden text-white">
+                <div class="p-6">
+                    <h2 class="text-xl font-bold">Programmation</h2>
+                    <p class="text-white/90 mt-2">ID: 3</p>
+                    <p class="text-white/90 mt-2">Date de la séance: 03/12/2024</p>
+                    <p class="text-white/90 mt-2">Heure de Debut:10h:00</p>
+                    <p class="text-white/90 mt-2">Heure de Fin:12h:00</p>
+                    <p class="text-white/90 mt-2">Professeur:Wane</p>
+                    <div class="mt-4 text-center">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <div class="p-6">
+                    <h2 class="text-lg font-bold">Programmation</h2>
+                    <p class="text-gray-600 mt-2">ID: 4</p>
+                    <p class="text-gray-600 mt-2">Date de la séance: 04/12/2024</p>
+                    <p class="text-gray-600 mt-2">Heure de Debut:10h:00</p>
+                    <p class="text-gray-600 mt-2">Heure de Fin:12h:00</p>
+                    <p class="text-gray-600 mt-2">Professeur:Wane</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
